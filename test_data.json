@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "userId": "test_user_001",
+    "surveyId": "survey_test_123",
+    "questionId": "q1_test",
+    "timestamp": "2026-01-19T12:00:00.000Z",
+    "selectedResponse": "B"
+  },
+  "trajectory": [
+    {"x": 0.0, "y": 0.0, "step": 0, "normalizedTime": 0.0},
+    {"x": 0.05, "y": 0.05, "step": 1, "normalizedTime": 0.0526},
+    {"x": 0.10, "y": 0.12, "step": 2, "normalizedTime": 0.1053},
+    {"x": 0.15, "y": 0.20, "step": 3, "normalizedTime": 0.1579},
+    {"x": 0.20, "y": 0.30, "step": 4, "normalizedTime": 0.2105},
+    {"x": 0.25, "y": 0.42, "step": 5, "normalizedTime": 0.2632},
+    {"x": 0.30, "y": 0.55, "step": 6, "normalizedTime": 0.3158},
+    {"x": 0.35, "y": 0.68, "step": 7, "normalizedTime": 0.3684},
+    {"x": 0.40, "y": 0.80, "step": 8, "normalizedTime": 0.4211},
+    {"x": 0.42, "y": 0.85, "step": 9, "normalizedTime": 0.4737},
+    {"x": 0.44, "y": 0.88, "step": 10, "normalizedTime": 0.5263},
+    {"x": 0.46, "y": 0.91, "step": 11, "normalizedTime": 0.5789},
+    {"x": 0.48, "y": 0.93, "step": 12, "normalizedTime": 0.6316},
+    {"x": 0.50, "y": 0.95, "step": 13, "normalizedTime": 0.6842},
+    {"x": 0.51, "y": 0.96, "step": 14, "normalizedTime": 0.7368},
+    {"x": 0.52, "y": 0.97, "step": 15, "normalizedTime": 0.7895},
+    {"x": 0.53, "y": 0.98, "step": 16, "normalizedTime": 0.8421},
+    {"x": 0.54, "y": 0.99, "step": 17, "normalizedTime": 0.8947},
+    {"x": 0.55, "y": 0.995, "step": 18, "normalizedTime": 0.9474},
+    {"x": 0.56, "y": 1.0, "step": 19, "normalizedTime": 1.0}
+  ],
+  "metrics": {
+    "deviation": {
+      "maxDeviationPositive": 45.2,
+      "maxDeviationNegative": -12.5,
+      "aucPositive": 123.4,
+      "aucNegative": -34.5
+    },
+    "velocity": {
+      "maximalVelocity": 1.234,
+      "averageVelocity": 0.567,
+      "maximalVelocityPxPerSec": 1234.0,
+      "averageVelocityPxPerSec": 567.0
+    },
+    "complexity": {
+      "angleEntropy": 2.345,
+      "initiationTimeMs": 123
+    },
+    "hover": {
+      "hoverCounts": {
+        "A": 2,
+        "B": 1,
+        "C": 0,
+        "D": 1
+      },
+      "totalHovers": 4
+    }
+  }
+}
