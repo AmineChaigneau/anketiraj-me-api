@@ -82,7 +82,8 @@ The API expects JSON data in the **TestMetrics API output format**:
       "maxDeviationPositive": 45.2,
       "maxDeviationNegative": -12.5,
       "aucPositive": 123.4,
-      "aucNegative": -34.5
+      "aucNegative": -34.5,
+      "averageDeviation": 12.3
     },
     "velocity": {
       "maximalVelocity": 1.234,
@@ -92,7 +93,9 @@ The API expects JSON data in the **TestMetrics API output format**:
     },
     "complexity": {
       "angleEntropy": 2.345,
-      "initiationTimeMs": 123
+      "initiationTimeMs": 123,
+      "xFlips": 3,
+      "yFlips": 2
     },
     "hover": {
       "hoverCounts": {
@@ -106,6 +109,12 @@ The API expects JSON data in the **TestMetrics API output format**:
   }
 }
 ```
+
+**Note on Metrics:**
+- `xFlips`, `yFlips`, and `averageDeviation` are **optional** in the input
+- If provided (from TestMetrics), they are calculated on the **full raw trajectory** for maximum accuracy
+- If missing, the API will automatically calculate them from the **interpolated trajectory** (20 points)
+- For best results, always include these pre-calculated metrics when available
 
 ## 📤 Output Format
 

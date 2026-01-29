@@ -33,7 +33,8 @@
       "maxDeviationPositive": 45.2,
       "maxDeviationNegative": -12.5,
       "aucPositive": 123.4,
-      "aucNegative": -34.5
+      "aucNegative": -34.5,
+      "averageDeviation": 12.3
     },
     "velocity": {
       "maximalVelocity": 1.234,
@@ -43,7 +44,9 @@
     },
     "complexity": {
       "angleEntropy": 2.345,
-      "initiationTimeMs": 123
+      "initiationTimeMs": 123,
+      "xFlips": 3,
+      "yFlips": 2
     },
     "hover": {
       "hoverCounts": {

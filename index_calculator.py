@@ -153,6 +153,7 @@ class IndexCalculator:
         # Extract metrics
         deviation = metrics.get('deviation', {})
         velocity = metrics.get('velocity', {})
+        complexity = metrics.get('complexity', {})
         hover = metrics.get('hover', {})
         
         max_dev_pos = deviation.get('maxDeviationPositive', 0)
@@ -161,11 +162,21 @@ class IndexCalculator:
         auc_neg = abs(deviation.get('aucNegative', 0))
         avg_velocity = velocity.get('averageVelocityPxPerSec', 0)
         
-        # Calculate additional metrics from trajectory
-        traj_metrics = self.calculate_trajectory_metrics(trajectory)
-        x_flips = traj_metrics['xFlips']
-        y_flips = traj_metrics['yFlips']
-        avg_deviation = traj_metrics['averageDeviation']
+        # Use pre-calculated metrics if available (from full trajectory)
+        # Otherwise, calculate from interpolated trajectory
+        x_flips = complexity.get('xFlips')
+        y_flips = complexity.get('yFlips')
+        avg_deviation = deviation.get('averageDeviation')
+        
+        if x_flips is None or y_flips is None or avg_deviation is None:
+            # Fallback: calculate from interpolated trajectory
+            traj_metrics = self.calculate_trajectory_metrics(trajectory)
+            if x_flips is None:
+                x_flips = traj_metrics['xFlips']
+            if y_flips is None:
+                y_flips = traj_metrics['yFlips']
+            if avg_deviation is None:
+                avg_deviation = traj_metrics['averageDeviation']
         
         # Calculate hover non-selected ratio
         hover_counts = hover.get('hoverCounts', {})
